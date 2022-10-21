@@ -23,3 +23,5 @@ php artisan serve
 email: authenicated@user.gr
 passwd: 123456
 ```
+## API endpoint  
+http://127.0.0.1:8000/companies
