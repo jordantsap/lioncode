@@ -9,7 +9,7 @@ git clone https://github.com/jordantsap/lioncode && cd lioncode
 ```console
 npm install && npm run dev
 ```
-## open new cmd if folder and run artisan commands to setup the test project  
+## open new terminal in the repo folder and run artisan commands to setup the test project  
 ```console
 npm install && npm run dev && php artisan key:generate && php artisan migrate --seed
 ```
