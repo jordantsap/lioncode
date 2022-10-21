@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = 'jordantsap';
+        $user->name = 'lioncode';
         $user->email = 'authenticated@user.gr';
         $user->api_token = 'User Api token'.random_int(0, 999999999999999);
         $user->password = bcrypt('123456');
