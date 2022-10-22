@@ -16,7 +16,7 @@ class CompanyController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('api');
+//        $this->middleware('auth')->only('index');
     }
 
     /**
@@ -26,13 +26,13 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        if(! Auth::check()) {
-            abort(500);
+        if(Auth::check() === true) {
+            $companies = Company::all();
+
+            return response()->json($companies);
         }
         else{
-            $companies = Company::all();
-//        return view('companies.index', response()->json($companies));
-            return json_decode($companies, JSON_PRETTY_PRINT);
+            abort(401, 'Empty response');
         }
     }
 

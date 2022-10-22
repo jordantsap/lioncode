@@ -21,3 +21,6 @@ Auth::routes(['register' => false]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//  Companies controller authentication in controller constructor
+Route::resource('companies', \App\Http\Controllers\CompanyController::class )
+    ->only('show');
