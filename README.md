@@ -25,4 +25,3 @@ passwd: 123456
 ```
 ## API endpoint # new
 http://127.0.0.1:8000/api/companies
-0
