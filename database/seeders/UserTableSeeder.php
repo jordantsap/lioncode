@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -16,11 +17,10 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = 'jordantsap';
-        $user->email = 'jordantsap@hotmail.gr';
-        $user->api_token = 'User Api token'.random_int(0, 999999999999999);
+        $user->name = 'test';
+        $user->email = 'test@test.gr';
+        $user->api_token = 'User_Api_token'.now().rand().Hash::make('lioncode');
         $user->password = bcrypt('123456');
         $user->save();
-//        $user->api_token = $user->id.rand();
     }
 }

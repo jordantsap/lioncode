@@ -3,6 +3,12 @@
 @section('content')
     <div class="container">
         <table class="table">
+        <button class="btn btn-link" onclick="history_back()">Go to companies list</button>
+        <script>
+            function history_back() {
+                window.history.back();
+            }
+        </script>
             <thead>
             <tr>
                 <th>Company title</th>

@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('guest');
+//Route::get('/', function () {
+//    return view('welcome');
+//})->middleware('guest');
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//  Companies controller authentication in controller constructor
-Route::resource('companies', \App\Http\Controllers\CompanyController::class )
-    ->middleware('auth');

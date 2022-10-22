@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Http\Requests\StoreCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -15,7 +16,7 @@ class CompanyController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('api');
     }
 
     /**
@@ -25,10 +26,14 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::paginate(10);
+        if(! Auth::check()) {
+            abort(500);
+        }
+        else{
+            $companies = Company::all();
 //        return view('companies.index', response()->json($companies));
-        return response()->json($companies);
-//        return view('companies.index', compact('companies'));
+            return json_decode($companies, JSON_PRETTY_PRINT);
+        }
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Policies;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyPolicy
 {
@@ -18,7 +20,7 @@ class CompanyPolicy
      */
     public function viewAny(User $user)
     {
-        //
+//        return Auth::user();
     }
 
     /**

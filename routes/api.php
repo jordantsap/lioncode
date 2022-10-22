@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//  Companies controller authentication in controller constructor
+Route::apiResource('companies', \App\Http\Controllers\CompanyController::class );
